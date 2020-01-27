@@ -26,10 +26,18 @@
     background-color: var(--color-grey-dark-1);
 
     flex: 0 0 18%; // flex-basis: set width for flex items
+
+    display: flex;
+    flex-direction: column; // changes the direction of the main-axis -> so that we can use justify content in a different direction (legal text to the bottom)
+    justify-content: space-between;
 }
 
 .hotel-view {
     background-color: #fff;
+
+    // TEST
     background-color: orangered;
+    height: 80rem;
+
     flex: 1; // turn on flex-grow
 }
