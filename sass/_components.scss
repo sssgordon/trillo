@@ -1,0 +1,135 @@
+////////////////////////////////////////////
+// LOGO
+.logo {
+    height: 3.25rem;
+    margin-left: 2rem;
+}
+
+////////////////////////////////////////////
+// SEARCH
+.search {
+    // background-color: orangered;
+    flex: 0 0 40%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__input {
+        // input elements does not inherit automatically from html
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        background-color: var(--color-grey-light-2);
+        border: none;
+        padding: 0.7rem 2rem;
+        border-radius: 100px; // rounded edges
+
+        width: 90%;
+        margin-right: -3.5rem; // so the button will be on the input
+
+        transition: all 0.2s;
+
+        &:focus {
+            outline: none;
+            width: 100%;
+            background-color: var(--color-grey-light-3);
+        }
+
+        &::-webkit-input-placeholder {
+            // selects input placeholder
+            font-weight: 100;
+            // color: red;
+            color: var(--color-grey-light-4);
+        }
+    }
+
+    &__input:focus + &__button {
+        // sibling selector
+        background-color: var(--color-grey-light-3);
+    }
+
+    &__button {
+        border: none;
+        background-color: var(
+            --color-grey-light-2
+        ); // so it looks like part of the input
+
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            transform: translateY(
+                2px
+            ); // when we click the button it moves down
+        }
+    }
+
+    &__icon {
+        // svg icon: set height and width
+        height: 2rem;
+        width: 2rem;
+        fill: var(--color-grey-dark-3); // how to change svg color
+    }
+}
+
+////////////////////////////////////////////
+// USER NAVIGATION
+.user-nav {
+    // background-color: greenyellow;
+    align-self: stretch; // so that when hover, the grey background stretch the whole height
+
+    display: flex;
+    align-items: center;
+
+    & > * {
+        // selects all direct children of .user-nav
+        padding: 0 2rem;
+        cursor: pointer;
+        height: 100%; // so that when hover, the grey background stretch the height
+
+        display: flex; // every box element is a flex container
+        align-items: center;
+    }
+
+    & > *:hover {
+        background-color: var(--color-grey-light-2);
+    }
+
+    &__icon-box {
+        position: relative;
+    }
+
+    &__icon {
+        height: 2.25rem;
+        width: 2.25rem;
+        fill: var(--color-grey-dark-2);
+    }
+
+    &__notification {
+        font-size: 0.8rem;
+        height: 1.75rem;
+        width: 1.75rem;
+        border-radius: 50%;
+        background-color: var(--color-primary);
+        color: #fff;
+
+        position: absolute;
+        top: 1.5rem;
+        right: 1.1rem;
+
+        // flexbox WORKS ON TEXT
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__user-photo {
+        height: 3.75rem;
+        border-radius: 50%; // makes it circle
+        margin-right: 1rem;
+    }
+}
